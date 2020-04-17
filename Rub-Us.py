@@ -8,6 +8,7 @@ import time  # Модуль для остановки программы
 
 TIME_TO_CHECK = 60  # Время через которое будет производится запрос
 
+
 # Основной класс
 class Currency:
     # Ссылка на нужную страницу
@@ -49,7 +50,8 @@ class Currency:
             print("Курс сильно упал, может пора что-то делать?")
             print("Сейчас курс: 1 доллар = " + str(currency))
 
-        print("Сейчас курс: 1 доллар = " + str(currency))
+        change_float = currency - self.current_converted_price
+        print("Сейчас курс: 1 доллар = " + str(currency), "\tИзменился на: ", change_float)
         time.sleep(TIME_TO_CHECK)  # Засыпание программы на TIME_TO_CHECK
         self.check_currency()
 
