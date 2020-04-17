@@ -6,7 +6,7 @@ import requests  # Модуль для обработки URL
 from bs4 import BeautifulSoup  # Модуль для работы с HTML
 import time  # Модуль для остановки программы
 
-TIME_TO_CHECK = 10
+TIME_TO_CHECK = 60  # Время через которое будет производится запрос
 
 # Основной класс
 class Currency:
