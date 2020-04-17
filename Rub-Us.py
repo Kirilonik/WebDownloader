@@ -51,7 +51,7 @@ class Currency:
             print("Сейчас курс: 1 доллар = " + str(currency))
 
         change_float = currency - self.current_converted_price
-        print("Сейчас курс: 1 доллар = " + str(currency), "\tИзменился на: ", round(change_float, 3))
+        print("+Сейчас курс: 1 $ = " + str(currency), "\n\tИзменился на: ", round(change_float, 2))
         time.sleep(TIME_TO_CHECK)  # Засыпание программы на TIME_TO_CHECK
         self.check_currency()
 
