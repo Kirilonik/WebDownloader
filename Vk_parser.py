@@ -7,7 +7,7 @@ def take_1000_photos():
     version = 5.92
     domian = "ohthumbelina"
     offset = 0  # Смещение от 0 поста
-    count = 50  # Количество отсмотренных постов
+    count = 100  # Количество отсмотренных постов
     all_posts = []
     while offset < 100:
         response = requests.get("https://api.vk.com/method/wall.get",
