@@ -7,14 +7,18 @@ def take_1000_photos():
     version = 5.92
     domian = "ohthumbelina"
     offset = 0  # Смещение от 0 поста
-    count = 100  # Количество отсмотренных постов
+    count = 199  # Количество отсмотренных постов
     all_posts = []
-    while offset < 100:
+    while offset < 1000:
         response = requests.get("https://api.vk.com/method/wall.get",
-                                params={"access_token": token, "v": version, "domain": domian, "count": count})
+                                params={"access_token": token,
+                                        "v": version,
+                                        "domain": domian,
+                                        "count": count,
+                                        "offset": offset})
 
         data = response.json()['response']['items']
-        offset += 100
+        offset += 200
         all_posts.extend(data)
     return all_posts
 
@@ -34,6 +38,7 @@ def file_writer(data):
                         file_photo.write(chunk)
                     print("Фото сохранено", num)
                     num += 1
+
         except KeyError:
             pass
 
