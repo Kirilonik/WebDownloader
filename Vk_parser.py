@@ -2,9 +2,9 @@ import requests
 import os
 
 
-def take_1000_photos():
+def take_Some_photos():
     token = "ee0cbef5ee0cbef5ee0cbef533ee7d9361eee0cee0cbef5b096227ad29d52f6cf1beed1"
-    version = 5.92
+    version = 5.103
     domian = "ohthumbelina"
     offset = 0  # Смещение от 0 поста
     count = 199  # Количество отсмотренных постов
@@ -26,11 +26,11 @@ def take_1000_photos():
 def file_writer(data):
     num = 1
     os.chdir("D://")
-    os.makedirs("Nice_Girl", exist_ok=True)
+    os.makedirs("Downloads", exist_ok=True)
     for posts in data:
         try:
             for i in range(len(posts['attachments'])):
-                with open(os.path.join("Nice_Girl", str(num) + ".png"), "wb") as file_photo:
+                with open(os.path.join("Downloads", str(num) + ".png"), "wb") as file_photo:
                     resp = posts['attachments'][i]['photo']['sizes'][-1]['url']
                     resp_url = requests.get(resp)
                     resp_url.raise_for_status()
@@ -43,7 +43,7 @@ def file_writer(data):
             pass
 
 
-all_post = take_1000_photos()
+all_post = take_Some_photos()
 file_writer(all_post)
 
-print(1)
+print("Done...")
