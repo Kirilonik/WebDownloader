@@ -15,7 +15,7 @@ client = Client(SID, TOKEN)
 
 
 def Choose_ToDo(todo_list):
-    list_today = []
+    list_today = ["ТестЕГЭ РУС", "МАТ 1 часть"]
     for i in range(2):
         random_choose = random.choice(todo_list)
         list_today.append(random_choose)
